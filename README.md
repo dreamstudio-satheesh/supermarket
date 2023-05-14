@@ -42,27 +42,32 @@ To install Supermarket POS System, follow these steps:
     
 3.  Copy the example env file and make the required configuration changes in the .env file
     
-    bashCopy code
-    
+
+    ```sh
     `cp .env.example .env` 
+    ```
     
 4.  Generate a new application key
     
-    vbnetCopy code
-    
+
+    ```sh
     `php artisan key:generate` 
+    ```
     
 5.  Run the database migrations (Set the database connection in .env before migrating)
     
-    Copy code
     
+    
+   ```sh
     `php artisan migrate` 
+   ```
     
 6.  Start the local development server
     
-    Copy code
-    
+   
+    ```python
     `php artisan serve` 
+    ```
     
 
 You can now access the server at [http://localhost:8000](http://localhost:8000/)
