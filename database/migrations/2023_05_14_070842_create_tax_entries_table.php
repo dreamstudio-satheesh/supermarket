@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('tax_entries', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('sale_id')->constrained();
+            $table->foreignId('gst_rate_id')->constrained();
+            $table->decimal('tax_amount', 8, 2);
             $table->timestamps();
         });
+        
     }
 
     /**

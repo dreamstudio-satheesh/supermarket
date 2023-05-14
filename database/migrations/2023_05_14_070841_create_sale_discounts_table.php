@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('sale_discounts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('sale_id')->constrained();
+            $table->foreignId('discount_code_id')->constrained();
             $table->timestamps();
         });
+        
     }
 
     /**

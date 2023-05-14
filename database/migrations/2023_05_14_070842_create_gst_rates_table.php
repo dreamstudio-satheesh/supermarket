@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('gst_rates', function (Blueprint $table) {
             $table->id();
+            $table->decimal('rate_percentage', 5, 2);
             $table->timestamps();
         });
+        
     }
 
     /**

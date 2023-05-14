@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('store_inventory', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('store_id')->constrained('store_locations');
+            $table->foreignId('product_id')->constrained();
+            $table->integer('quantity');
             $table->timestamps();
         });
+        
     }
 
     /**

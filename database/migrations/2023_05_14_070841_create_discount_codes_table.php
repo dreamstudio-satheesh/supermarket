@@ -13,8 +13,14 @@ return new class extends Migration
     {
         Schema::create('discount_codes', function (Blueprint $table) {
             $table->id();
+            $table->string('code');
+            $table->string('discount_type'); // For 'percentage' or 'fixed amount'
+            $table->decimal('discount_value', 8, 2);
+            $table->date('start_date');
+            $table->date('end_date');
             $table->timestamps();
         });
+        
     }
 
     /**

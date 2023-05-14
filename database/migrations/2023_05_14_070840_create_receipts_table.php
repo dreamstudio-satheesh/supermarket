@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('sale_id')->constrained();
+            $table->string('payment_method');
+            $table->decimal('amount_paid', 8, 2);
             $table->timestamps();
         });
+        
     }
 
     /**

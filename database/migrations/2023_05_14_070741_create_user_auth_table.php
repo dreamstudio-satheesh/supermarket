@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('user_auth', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('employee_id')->constrained();
+            $table->string('username');
+            $table->string('password');
             $table->timestamps();
         });
+        
     }
 
     /**
