@@ -28,31 +28,31 @@ Before you begin, ensure you have met the following requirements:
 To install Supermarket POS System, follow these steps:
 
 1.  Clone the repository
-    
-    bashCopy code
-    
-    `git clone https://github.com/dreamstudio-satheesh/supermarket.git` 
+      
+    ```python
+    git clone https://github.com/dreamstudio-satheesh/supermarket.git 
+    ```
     
 2.  Install dependencies
     
  
   ```sh    
-    `cd supermarket
-    composer install` 
+    cd supermarket
+    composer install 
   ```
     
 3.  Copy the example env file and make the required configuration changes in the .env file
     
 
     ```sh
-    `cp .env.example .env` 
+    cp .env.example .env
     ```
     
 4.  Generate a new application key
     
 
     ```sh
-    `php artisan key:generate` 
+    php artisan key:generate
     ```
     
 5.  Run the database migrations (Set the database connection in .env before migrating)
@@ -60,14 +60,14 @@ To install Supermarket POS System, follow these steps:
     
     
    ```sh
-    `php artisan migrate` 
+    php artisan migrate
    ```
     
 6.  Start the local development server
     
    
     ```python
-    `php artisan serve` 
+    php artisan serve
     ```
     
 
