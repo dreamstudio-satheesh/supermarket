@@ -35,10 +35,11 @@ To install Supermarket POS System, follow these steps:
     
 2.  Install dependencies
     
-    bashCopy code
-    
-    `cd supermarket-pos
+ 
+  ```sh    
+    `cd supermarket
     composer install` 
+  ```
     
 3.  Copy the example env file and make the required configuration changes in the .env file
     
