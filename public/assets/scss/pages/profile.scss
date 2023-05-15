@@ -1,0 +1,95 @@
+.profile-set{
+    margin-bottom: 30px;
+    .profile-head {
+        height: 109px;
+        background: linear-gradient(90deg, $__fire__red 0%, $__primarycolor 100%);
+        @include rounded(0 10px 0 0);
+        @include respond-below(custom991) {
+            @include rounded(10px);
+        }
+    }
+    .profile-top {
+        @extend %display-flex;
+        @extend %justify-content-between;
+        @extend %align-items-center;
+        @include respond-below(custom767) {
+            flex-direction: $__column;
+        }
+        .profile-content {
+            @extend %display-flex;
+            @extend %align-items-center;
+            @include respond-below(custom767) {
+                flex-direction: $__column;
+            }
+        }
+        .profile-contentimg {
+            margin-top: -40px;
+            width: 130px;
+            position: $__relative;
+            border: 10px solid $__white;
+            @include rounded(50%);
+            box-shadow: 0px 4px 4px 0px #00000040;
+            @extend %display-flex;
+            @extend %justify-content-between;
+            @extend %align-items-center;
+            img {
+                @include rounded(50px);
+            }
+        }
+        .profileupload {
+            input[type="file"] {
+                opacity: 0;
+                width: 34px;
+                height: 34px;
+                display: $__block;
+                z-index: 9;
+                cursor: $__pointer;
+                @include position($__absolute,null,null,10px,42px);
+            }
+            a {
+                background: $__primarycolor;
+                width: 34px;
+                height: 34px;
+                z-index:1;
+                @include rounded(50px);
+                @extend %display-flex;
+                @extend %justify-content-center;
+                @extend %align-items-center;
+                @include position($__absolute,null,null,10px,41px);
+            }
+        }
+        .profile-contentname {
+            padding-left: 20px;
+            @include respond-below(custom767) {
+                text-align: $__center;
+                @include margin-padding(null, 20px 0 20px 0);
+            }
+            h2 {
+                font-size: $__font__size__18;
+                color: $__secondarycolor;
+                font-weight: $__bold;
+            }
+            h4 {
+                color: #777;
+                font-size: $__font__size__14;
+            }
+        }
+    }
+}
+.pass-group {
+    position: $__relative;
+    .toggle-password,
+    .toggle-passworda {
+        transform: translateY(-50%);
+        cursor: $__pointer;
+        width: 30px;
+        height: 30px;
+        color: $__sandstone;
+        font-size: $__font__size__14;
+        @include rounded(50%);
+        @extend %display-flex;
+        @extend %justify-content-center;
+        @extend %align-items-center;
+        @include position($__absolute,50%,10px,null,null);
+    }
+}

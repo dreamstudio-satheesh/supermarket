@@ -1,0 +1,87 @@
+.modal-barcode {
+    ul {
+        @extend %display-flex;
+        @extend %align-items-center;
+        @extend %flex-wrap;
+        li {
+            @include rounded(7px);
+            width: 25%;
+            margin-bottom: 10px;
+            padding: 0 5px;
+            @include respond-below(custom991) {
+                width: 50%;
+            }
+            a {
+                border: 1px solid $__dark__lights;
+                @include rounded(10px);
+                display: $__block;
+                padding: 10px;
+                text-align: $__center;
+            }
+        }
+    }
+}
+
+.modal{
+    .modal-title {
+        font-weight: $__bold;
+        @include respond-below(custom991) {
+            font-size: $__font__size__16;
+        }
+    }
+    .close,
+    .btn-close {
+        color: $__fire__red;
+        opacity: 1;
+        font-size: $__font__size__20;
+        width: 22px;
+        height: 22px;
+        border: 0;
+        font-weight: 700;
+        background: $__transparent;
+        @include rounded(50px);
+        @extend %display-flex;
+        @extend %align-items-center;
+        @extend %justify-content-center;    
+        &:hover{
+            background: $__fire__red;
+            color:$__white;
+        }
+    }
+    .modal-footer{
+       border: 0;
+       justify-content: flex-start;
+        .btn {
+            min-width: 130px;
+            @include margin-padding(null, 12px);
+            @include respond-below(custom991) {
+                min-width: $__auto;
+                @include margin-padding(null, 7px 12px);
+            }
+        }
+        .btn-print {
+            border: 1px solid $__primarycolor;
+            color: $__primarycolor;
+            @extend %display-flex;
+            @extend %align-items-center;
+            @extend %justify-content-center;
+            img{
+                margin-left: 10px;
+            }
+            &:hover{
+                background: $__primarycolor;
+                color: $__white;
+                img{
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+        .btn-secondary{
+            background: $__secondarycolor;
+            &:hover{
+                @include box-shadow(inset, 0, 0px, 0px, 100px, #fff);
+                color: $__secondarycolor;
+            }
+        }
+    }
+}

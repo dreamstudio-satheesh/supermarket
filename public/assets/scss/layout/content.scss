@@ -1,0 +1,123 @@
+.page-wrapper {
+   
+    @include margin-padding( 0 0 0 260px, 60px 0 0);
+    @include position($__relative,null,null,null,0);
+    @include transition(all 0.2s ease);
+    @include respond-below(custom991) {
+        @include margin-padding( 0 , 60px 0 0);
+    }
+    .content {
+        @include margin-padding(null, 25px);
+        @include respond-below(custom991) {
+            @include margin-padding(null, 15px);
+        }
+    }
+}
+.sidebarrightmenu{
+    .page-wrapper {
+        @include margin-padding(0 0 0 350px, null);
+        @include respond-below(custom991) {
+            @include margin-padding(0, null);
+        }
+    }
+}
+.card{
+    @include margin-padding(0 0 25px, null);
+    border:1px solid $__light-goose;
+    @include rounded(6px);
+    .card-header{
+        border-bottom:0;
+        background: $__transparent;
+        @include margin-padding(null, 20px);
+        .dropset {
+            color: $__gray__dark;
+            @include margin-padding(null, 0 10px);
+        }
+        .card-title{
+            font-size: $__font__size__18;
+            font-weight: $__bold;
+            color: $__secondarycolor;
+            @include margin-padding(0 0 20px, null);
+            @include respond-below(custom991) {
+                font-size: $__font__size__14;
+            }
+        }
+    }
+    .card-body{
+        @include margin-padding(null, 20px);
+        @include respond-below(custom991) {
+            @include margin-padding(null, 15px);
+        }
+        .card-title{
+            font-size: $__font__size__18;
+            font-weight: $__bold;
+            color: $__secondarycolor;
+            @include margin-padding(0 0 10px, null);
+            @include respond-below(custom991) {
+                font-size: $__font__size__14;
+            }
+        }
+    }
+}
+.btn-white {
+    background-color: $__white;
+    border: 1px solid rgba(145, 158, 171, 0.32);
+    color: $__secondarycolor;
+    @include margin-padding(null, 3px 10px);
+    @include rounded(5px);
+    @extend %display-flex;
+    @extend %align-items-center;
+    @extend %justify-content-between;
+    min-width: 90px;
+}
+.inputcheck {
+    display: $__block;
+    position: $__relative;
+    padding-left: 25px;
+    cursor: $__pointer;
+    color: $__black;
+    font-weight: $__medium;
+    font-size: $__font__size__14;
+    input {
+        @include position($__absolute,null,null,null,null);
+        opacity: 0;
+        cursor: $__pointer;
+        height: 0;
+        width: 0;
+        &:checked {
+            & ~ .checkmark:after {
+                display: $__block;
+            }
+        }
+      }
+      .checkmark {
+        @include position($__absolute,0,null,null,0);
+        height: 20px;
+        width: 20px;
+        border:1px solid $__light-goose-grays;
+        background: $__light__gooses;
+        @include rounded(5px);
+        &:after {
+            content: "";
+            position: $__absolute;
+            display: $__none;
+        }
+        &:after {
+            @include position($__absolute,3px,null,null,6px);
+            width: 5px;
+            height: 10px;
+            border: solid $__primarycolor;
+            border-width: 0 2px 2px 0;
+            @include transform(rotate(45deg));
+        }
+      }
+     
+    input {
+        &:checked ~ .checkmark {
+            border:1px solid $__primarycolor;
+        }
+     }
+}
+.animation-tada{
+    animation: tada 1.5s ease infinite;
+}

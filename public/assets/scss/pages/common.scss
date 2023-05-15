@@ -1,0 +1,292 @@
+.page-header {
+    margin-bottom: 25px;
+    @extend %display-flex;
+    @extend %align-items-center;
+    @extend %justify-content-between;
+    @include respond-below(custom575) {
+        margin-bottom: 20px;
+        flex-direction: $__column;
+        .page-title {
+            text-align: $__center;
+        }
+        .page-btn{
+            margin-top:15px;
+        }
+    }
+    h3{
+        font-weight: $__bold;
+        color: $__secondarycolor;
+        font-size: $__font__size__18;
+        @include respond-below(custom991) {
+            font-size: $__font__size__14;
+        }
+    }
+    h4 {
+        font-weight: $__bold;
+        color: $__secondarycolor;
+        font-size: $__font__size__18;
+        @include respond-below(custom991) {
+            font-size: $__font__size__14;
+        }
+    }
+    h6 {
+        font-size: $__font__size__14;
+        color: $__dark__ash__gray;
+        font-weight: $__regular;
+        @include respond-below(custom991) {
+            font-size: $__font__size__12;
+        }
+    }
+    .btn-filter {
+        background: $__primarycolor;
+        width: 34px;
+        height: 34px;
+        @extend %display-flex;
+        @extend %align-items-center;
+        @extend %justify-content-center;
+        padding: 0;
+        &:hover{
+            background: linear-gradient(46.62deg, $__primarycolor 0%, $__violet 93.64%);
+        }
+    }
+    .btn-added {
+        background:   $__primarycolor;
+        padding: 7px 15px;
+        color: #fff;
+        font-weight: 700;
+        @extend %display-flex;
+        @extend %align-items-center;
+        font-size: 14px;
+        img{
+            filter: brightness(0) invert(1);
+        }
+        @include respond-below(custom991) {
+            padding: 3px 8px; 
+        }
+        &:hover{
+            background: $__violets;
+        }
+    }
+}
+
+
+.table-top {
+    @extend %display-flex;
+    @extend %align-items-center;
+    @extend %justify-content-between;
+    margin-bottom: 25px;
+    @include respond-below(custom575) {
+        flex-direction: $__column;
+        .wordset{
+            margin-top: 25px;
+        }
+    }
+}
+
+.search-set {
+    @extend %display-flex;
+    @extend %align-items-center;
+    .btn-filter {
+        background: $__primarycolor;
+        width: 34px;
+        height: 34px;
+        @extend %display-flex;
+        @extend %align-items-center;
+        @extend %justify-content-center;
+        padding: 0;
+        margin-right: 10px;
+        span{
+            display: $__none;
+        }
+        &:hover{
+            background: $__violets;
+        }
+        &.setclose{
+            background: $__fire__red;
+            >img {
+                display:$__none;
+            }
+            span{
+                display: $__block;
+                img{
+                    display: $__block;
+                }
+            }
+        }
+        span{
+            display: $__none;
+        }
+        > img{
+            display: $__block;
+        }
+    }
+    .search-input{
+        position: $__relative;
+        input[type="search"] {
+            background: $__transparent;
+            height: 40px;
+            border: 1px solid rgba(145, 158, 171, 0.32);
+            width: 200px;
+            @include rounded(5px);
+            @include margin-padding(null, 0 15px 0 30px);
+        }
+        .btn-searchset {
+            @include margin-padding(null, 2px);
+            @include rounded(50px);
+            @include position($__absolute,8px,null,null,6px);
+            
+        }
+    }
+}
+.swal2-actions{
+    .swal2-confirm{
+        margin-right:10px;
+    }
+}
+.wordset{
+    ul {
+        @extend %display-flex;
+        @extend %align-items-center;
+        li {
+            @include margin-padding(0 10px,null);
+            a{
+                display: $__block;
+            }
+        }
+    }
+} 
+.checkboxs {
+    display: $__block;
+    position: $__relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: $__pointer;
+    user-select: $__none;
+    input {
+        position: $__absolute;
+        opacity: 0;
+        cursor: $__pointer;
+        height: 0;
+        width: 0;
+        & ~ .checkmarks {
+            border: 1px solid $__dark__grays;
+          }
+          &:checked ~ .checkmarks {
+            background-color: $__primarycolor;
+          }
+          &:checked ~ .checkmarks:after {
+            display: $__block;
+        }
+    }
+    .checkmarks {
+        height: 15px;
+        width: 15px;
+        @include position($__absolute,0,null,null,0);
+        &:after {
+            content: "";
+            position: $__absolute;
+            display: $__none;
+        }
+        &:after {
+            left: 4px;
+            top: 1px;
+            width: 5px;
+            height: 9px;
+            border: solid $__white;
+            border-width: 0 2px 2px 0;
+            @include transform(rotate(45deg));
+          }
+    }
+}
+.image-upload {
+    border: 1px solid rgba(145, 158, 171, 0.32);
+    position: $__relative;
+    margin-bottom: 35px;
+    border-radius: 5px;
+    &:hover{
+        background:$__dark__light;
+    }
+    input[type="file"]{
+        width: $__full__width;
+        opacity: 0;
+        height: 100px;
+        position: $__relative;
+        z-index: 9;
+        cursor: $__pointer;
+    }
+    .image-uploads {
+        text-align: $__center;
+        width: $__full__width;
+        @include margin-padding(null, 20px 0);
+        @include rounded(5px);
+        @include position($__absolute,0,null,null,null);
+        h4 {
+            font-size: $__font__size__14;
+            font-weight: $__medium;
+            color: $__secondarycolor
+        }
+    }
+    &.image-upload-new{
+        input[type="file"]{
+            height: 258px;
+        }
+        .image-uploads {
+            @extend %display-flex;
+            @extend %align-items-center;
+            @extend %justify-content-center;
+            height: $__full__height;
+            flex-direction: $__column;
+        }
+    }
+}
+.checktoggle {
+    background-color: rgba(115, 103, 240, 0.2);
+    @include rounded(12px);
+    cursor: $__pointer;
+    display: $__block;
+    font-size: 0;
+    height: 13px;
+    margin-bottom: 0;
+    position: $__relative;
+    width: 25px;
+    &:after {
+        content: ' ';
+        display: $__block;
+        transform: translate(2px, -50%);
+        width: 10px;
+        height: 10px;
+        background-color:$__white;
+        transition: left 300ms ease, transform 300ms ease;
+        @include rounded( 50%);
+        @include transform(translate(2px,-50%));
+        @include position($__absolute,50%,null,null,0);
+    }
+}
+.check:checked + .checktoggle:after {
+    background-color: $__white;
+    left: 100%;
+    transform: translate(calc(-90% - 3px), -45%);
+}
+.check {
+    display: $__block;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+    visibility: $__hidden;
+    opacity: 0;
+    pointer-events: $__none;
+    position: $__absolute;
+    &:checked + {
+        .checktoggle {
+            background-color:$__successcolor;
+        }
+    }
+}
+#filter_inputs{
+    border:0;
+    margin:0;
+    .card-body{
+        padding: 0;
+    }
+}

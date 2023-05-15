@@ -1,0 +1,249 @@
+.login-wrapper {
+    width: $__full__width;
+    overflow: $__hidden;
+    height: $__full_height_window;
+    @extend %flex-wrap;
+    @extend %display-flex;
+    .login-content {
+        width: 40%;
+        height: $__full_height_window;
+        @include margin-padding(null, 30px);
+        overflow: $__auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        @include respond-below(custom991) {
+            width: $__full__width;
+        }
+        .login-logo {
+            display: $__block;
+            margin-bottom: 25px;
+            max-width: 150px;
+        }
+        .login-userset{
+            width:$__full__width;
+            @include respond-below(custom991) {
+                margin-top: 30px;
+            }
+        }
+        .login-userheading {
+            @include margin-padding( 0 0 30px, null);
+             h3 {
+                font-size: $__font__size__24;
+                font-weight: $__bold;
+                @include margin-padding( 0 0 15px, null);
+                color: $__black;
+            }
+             h4 {
+                font-size: $__font__size__14;
+                font-weight: $__regular;
+                color: $__secondarycolor;
+                line-height: 1.4;
+            }
+        }
+        .form-login {
+            margin-bottom: 15px;
+            label {
+                width: $__full__width;
+                color: $__dark__ash__grays;
+                margin-bottom:10px;
+                font-size: $__font__size__14;
+                font-weight: $__medium;
+            }
+            .form-addons{
+                position: $__relative;
+                img{
+                    @include position($__absolute,16px,20px,null,null);
+                }
+                
+            }
+            input {
+                width: $__full__width;
+                height: 40px;
+                border: 1px solid rgba(145, 158, 171, 0.32);
+                @include rounded(5px);
+                @include margin-padding(null, 0 15px);
+                @include transition(all 0.2s ease);
+                &:focus{
+                    border: 1px solid $__primarycolor;
+                }
+            }
+            .btn-login {
+                width: $__full__width;
+                font-weight: $__bold;
+                background: $__primarycolor;
+                border-color:$__primarycolor ;
+                @include margin-padding(null, 12px);
+                @include transition(all 0.5s ease);
+                margin-top:15px;
+                color: $__white;
+                &:hover{
+                   box-shadow:0  50px #fff inset !important;
+                   color: $__primarycolor;
+                }
+            }
+            .alreadyuser {
+                margin-bottom: 15px;
+                h4 {
+                    font-size: $__font__size__14;
+                    font-weight: $__regular;
+                    color: $__goose-grays;
+                    a{
+                        color:$__primarycolor;
+                        font-weight: $__semibold;
+                    }
+                }
+            }
+        }
+        .signinform {
+            margin-bottom: 25px;
+            h4{
+                font-size: $__font__size__14;
+                font-weight: $__regular;
+                color: $__secondarycolor;
+                a{
+                    color: $__secondarycolor;
+                    font-weight: 600;
+                }
+            }
+        }
+        .form-setlogin {
+            text-align: $__center;
+            position: $__relative;
+            color: $__goose-grays;
+            font-size: $__font__size__14;
+            font-weight: $__regular;
+            margin-bottom: 40px;
+            h4{
+                position: $__relative;
+                font-size: $__font__size__14;
+                &:after{
+                    content: "";
+                    background: $__goose-gray;
+                    width:175px;
+                    height: 1px;
+                    @include position($__absolute,10px,null,null,0);
+                    @include respond-below(custom991) {
+                        height: 0px;
+                    }
+                }
+                &:before{
+                    content: "";
+                    background:$__goose-gray;
+                    width:175px;
+                    height: 1px;
+                    @include position($__absolute,10px,0,null,null);
+                    @include respond-below(custom991) {
+                        height: 0px;
+                    }
+                }
+            }
+        }
+        .toggle-password {
+            cursor: $__pointer;
+            width: 30px;
+            height: 30px;
+            color: $__goose-gray;
+            font-size: $__font__size__18;
+            @extend %display-flex;
+            @extend %justify-content-center;
+            @extend %align-items-center;
+            @include rounded(50%);
+            @include transform(translateY(-50%));
+            @include position($__absolute,50%,10px,null,null);
+            &:hover{
+                color:$__primarycolor;
+            }
+        }
+        .toggle-passwords {
+            cursor: $__pointer;
+            width: 30px;
+            height: 30px;
+            color: $__goose-gray;
+            font-size: $__font__size__18;
+            @extend %display-flex;
+            @extend %justify-content-center;
+            @extend %align-items-center;
+            @include rounded(50%);
+            @include transform(translateY(-50%));
+            @include position($__absolute,50%,10px,null,null);
+            &:hover{
+                color:$__primarycolor;
+            }
+        }
+        .pass-group {
+            position: $__relative;
+            font-size: $__font__size__14;
+            .fas{
+                font-size: $__font__size__13;
+                color: #939ea8;
+            }
+        }
+        .form-sociallink {
+            margin-top: 25px;
+            ul {
+                @extend %display-flex;
+                @extend %align-items-center;
+                @extend %flex-wrap;
+                li {
+                    width: $__half__width;
+                    text-align: $__center;
+                    @include respond-below(custom575) {
+                        width: $__full__width;
+                    }
+                    &:first-child {
+                        padding-right: 15px;
+                        @include respond-below(custom575) {
+                            padding-right: 0;
+                        }
+                    }
+                    a {
+                        color: $__secondarycolor;
+                        width: $__full__width;
+                        border: 1px  solid rgba(145, 158, 171, 0.23);
+                        @extend %display-flex;
+                        @extend %align-items-center;
+                        @extend %justify-content-center;
+                        @include rounded(5px);
+                        @include margin-padding(0 0 10px, 9px 4px);
+                        font-weight: $__medium;
+                        &:hover{
+                            background: $__primarycolor;
+                            color: $__white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .login-img {
+        width: 60%;
+        @include respond-below(custom991) {
+            display: $__none;
+        }
+         img {
+            width: $__full__width;
+            height: $__full_height_window;
+        }
+    }
+}
+.hover-a{
+    position: $__relative;
+    &:after{
+        content:"";
+        height: 2px;
+        width: $__full__width;
+        background: $__primarycolor;
+        @include transform(scale(0));
+        @include transition(all 0.3s ease);
+        @include position($__absolute,null,null,-3px,0);
+    }
+    &:hover:after{
+        @include transform(scale(1));
+    }
+    &:hover{
+        color: $__primarycolor !important;
+    }
+}
+

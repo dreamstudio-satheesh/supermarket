@@ -1,0 +1,14 @@
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+	background-color: $__warningcolors;
+	text-shadow: $__unset;
+}
+.bootstrap-datetimepicker-widget table td.today:before {
+	border-bottom-color: $__warningcolors;
+}
+.bootstrap-datetimepicker-widget table thead tr:first-child th:hover {
+    background: $__transparent;
+}
+.bor-b1{
+    border-bottom: 1px solid $__light-goose-grays;
+}

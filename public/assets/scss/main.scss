@@ -1,0 +1,46 @@
+/****** UTILS ******/
+@import "utils/variables";
+@import "utils/mixins";
+
+/******* BASE *******/
+@import "base/reset";
+@import "base/typography";
+@import "base/colors"; 
+@import "base/base";
+@import "base/grid";
+
+/******* COMPONENTS ******/
+@import "components/button";
+
+
+/****** LAYOUT ******/
+@import "layout/avatar";
+@import "layout/boostrap";
+@import "layout/calendar";
+@import "layout/chart";
+@import "layout/content";
+@import "layout/common";
+@import "layout/components";
+@import "layout/darktheme";
+@import "layout/elements";
+@import "layout/datatable";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/loader";
+@import "layout/select";
+@import "layout/sidebar";
+@import "layout/nav-tab";
+@import "layout/notification";
+@import "layout/table";
+@import "layout/popup";
+
+/****** PAGES ******/
+
+@import "pages/chat";
+@import "pages/common";
+@import "pages/dashboard";
+@import "pages/email";
+@import "pages/login";
+@import "pages/product";
+@import "pages/pos";
+@import "pages/profile";

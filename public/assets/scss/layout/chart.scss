@@ -1,0 +1,14 @@
+.apexcharts-legend.apexcharts-align-center.position-right {
+    display: $__none;
+}
+.apexcharts-toolbar {
+    display: $__none !important;
+}
+#sales_charts,
+.chart-set{
+    overflow: $__hidden;
+}
+.apexcharts-canvas {
+    width: 100% !important;
+}
+

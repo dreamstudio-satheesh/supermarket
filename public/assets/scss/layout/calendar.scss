@@ -1,0 +1,131 @@
+
+.calendar-events {
+    border: 1px solid $__transparent;
+    cursor: move;
+	@include margin-padding(null, 10px 15px);
+}
+.calendar-events:hover {
+	border-color: $__cloud__gray;
+    background-color: $__white;
+}
+.calendar-events i {
+    margin-right: 8px;
+}
+.calendar {
+	float: left;
+	margin-bottom: 0;
+}
+.fc-toolbar.fc-header-toolbar {
+    margin-bottom: 1.5rem;
+}
+.none-border .modal-footer {
+	border-top: none;
+}
+.fc-toolbar h2 {
+	font-size: 18px;
+	font-weight: 600;
+	font-family: 'Roboto', sans-serif;
+	line-height: 30px;
+	text-transform: uppercase;
+}
+.fc-day-grid-event .fc-time {
+	font-family: 'Roboto', sans-serif;
+}
+.fc-day {
+	background: $__white;
+}
+.fc-toolbar .fc-state-active,
+.fc-toolbar .ui-state-active,
+.fc-toolbar button:focus,
+.fc-toolbar button:hover,
+.fc-toolbar .ui-state-hover {
+	z-index: 0;
+}
+.fc th.fc-widget-header {
+	background: $__cloud__gray;
+	font-size: 14px;
+	line-height: 20px;
+	padding: 10px 0;
+	text-transform: uppercase;
+}
+.fc-unthemed th,
+.fc-unthemed td,
+.fc-unthemed thead,
+.fc-unthemed tbody,
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-row,
+.fc-unthemed .fc-popover {
+	border-color: #f3f3f3;
+}
+.fc-basic-view .fc-day-number, 
+.fc-basic-view .fc-week-number {
+    padding: 2px 5px;
+}
+.fc-button {
+	background: #f1f1f1;
+	border: none;
+	color: #797979;
+	text-transform: capitalize;
+	box-shadow: none !important;
+	border-radius: 3px !important;
+	margin: 0 3px !important;
+	padding: 6px 12px !important;
+	height: auto !important;
+}
+.fc-text-arrow {
+	font-family: inherit;
+	font-size: 16px;
+}
+.fc-state-hover {
+	background: #f3f3f3;
+}
+.fc-state-highlight {
+	background: #f0f0f0;
+}
+.fc-state-down,
+.fc-state-active,
+.fc-state-disabled {
+	background-color: $__primarycolor !important;
+	color: #fff !important;
+	text-shadow: none !important;
+}
+.fc-cell-overlay {
+	background: #f0f0f0;
+}
+.fc-unthemed .fc-today {
+	background: #fff;
+}
+.fc-event {
+	border-radius: 2px;
+	border: none;
+	color: #fff !important;
+	cursor: move;
+	font-size: 13px;
+	margin: 1px 7px;
+	padding: 5px 5px;
+	text-align: center;
+}
+.fc-basic-view td.fc-week-number span {
+	padding-right: 8px;
+	font-weight: 700;
+	font-family: 'Roboto', sans-serif;
+}
+.fc-basic-view td.fc-day-number {
+	padding-right: 8px;
+	font-weight: 700;
+	font-family: 'Roboto', sans-serif;
+}
+.event-form .input-group .form-control {
+	height: 40px;
+}
+.submit-section {
+	text-align: center;
+	margin-top: 40px;
+}
+.submit-btn {
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    min-width: 200px;
+    padding: 10px 20px;
+}

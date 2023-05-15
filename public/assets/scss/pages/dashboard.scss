@@ -1,0 +1,147 @@
+.dash-widget {
+    background: $__white;
+    @extend %display-flex;
+    @extend %align-items-center;
+    margin-bottom: 25px;
+    @include rounded(6px);
+    @include margin-padding(null, 20px);
+    border: 1px solid $__light-goose;
+    
+    &.dash1{
+        .dash-widgetimg{
+           span{
+                background: rgba(40, 199, 111, 0.12);
+           }
+        }
+    }
+    &.dash2{
+        .dash-widgetimg{
+           span{
+             background: rgba(0, 207, 232, 0.12);
+           }
+        }
+    }
+    &.dash3{
+        .dash-widgetimg{
+           span{
+                background: rgba(234, 84, 85, 0.12);
+           }
+        }
+    }
+    .dash-widgetcontent {
+        margin-left: 20px;
+        h5 {
+            color: $__secondarycolor;
+            font-weight: $__bold;
+            font-size: $__font__size__18;
+            margin-bottom: 5px;
+        }
+        h6 {
+            font-weight: $__regular;
+            font-size: $__font__size__14;
+            color: $__secondarycolor;
+        }
+    }
+    .dash-widgetimg {
+        span {
+            width: 48px;
+            height: 48px;
+            background: rgba(249, 110, 111, 0.12);
+            @extend %display-flex;
+            @extend %align-items-center;
+            @extend %justify-content-center;
+            @include rounded(50px);
+        }
+    }
+}
+.dash-count {
+    background: $__primarycolor;
+    color: $__white;
+    min-height:98px;
+    width: $__full__width;
+    @include rounded(6px);
+    @extend %display-flex;
+    @extend %align-items-center;
+    @extend %justify-content-between;
+    @include margin-padding(0 0 25px, 20px);
+    &.das1{
+        background: #00CFE8;
+    }
+    &.das2{
+        background: $__violets;
+        
+    }
+    &.das3{
+        background: $__successcolor;
+    }
+    h4 {
+        font-size: $__font__size__24;
+        font-weight: $__bold;
+        margin-bottom: 0;
+    }
+    h5 {
+        font-size: $__font__size__14;
+    }
+    .dash-imgs{
+        @include transition(all 0.5s ease);
+        img{
+            width: 50px;
+            height: 50px;
+        }
+        i{
+            font-size: 36px;
+            color: #fff;
+        }
+        svg{
+            width: 50px;
+            height: 50px;
+        }
+    }
+    &:hover{
+        .dash-imgs{
+            @include transform(scale(1.25));
+        }
+    }
+}
+.btn-white{
+    &.dropdown-toggle{
+        &:after{
+            display: $__none;
+        }
+    }
+}
+.graph-sets{
+    @extend %display-flex;
+    @extend %align-items-center;
+    >ul{
+        @extend %display-flex;
+        @extend %align-items-center;
+        @include respond-below(custom991) {
+            display: $__none;
+        }
+        li{
+            margin-right: 35px;
+            span{
+                color: $__sandstone;
+                font-weight: 400;
+                position: $__relative;
+                &:after{
+                    content:"";
+                    width:12px;
+                    height: 12px;
+                    background-color: $__successcolor;
+                    @include rounded(50px);
+                    @include position($__absolute,3px,null,null,-20px);
+                }
+            }
+            &:last-child{
+                span{
+                    &:after{
+                        background-color: $__fire__red;
+                    }
+                }
+            }
+        }
+    }
+
+}
