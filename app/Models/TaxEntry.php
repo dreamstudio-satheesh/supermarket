@@ -9,6 +9,8 @@ class TaxEntry extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function gstRate()
     {
         return $this->belongsTo(GSTRate::class);
