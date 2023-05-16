@@ -16,6 +16,14 @@ return new class extends Migration
             $table->string('name');
             $table->timestamps();
         });
+
+        Schema::create('subcategories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->timestamps();
+        });
         
     }
 
@@ -25,5 +33,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('categories');
+
+        Schema::dropIfExists('subcategories');
     }
 };
