@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@push('scripts')
+    <!-- Chart JS -->
+		{{-- <script src="{{ asset('assets/plugins/apexchart/apexcharts.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/apexchart/chart-data.js') }}"></script> --}}
+@endpush
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

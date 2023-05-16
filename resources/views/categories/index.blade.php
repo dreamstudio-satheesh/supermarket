@@ -1,5 +1,12 @@
 @extends('layouts.main')
 
+
+@push('scripts')
+
+    <!-- Select2 JS -->
+		<script src="{{ asset('assets/plugins/select2/js/select2.min.js') }}"></script>   
+@endpush
+
 @section('content')
 <div class="content">
     <div class="page-header">

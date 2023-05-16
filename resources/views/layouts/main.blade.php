@@ -475,9 +475,7 @@
 		<!-- Bootstrap Core JS -->
 		<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 
-		<!-- Chart JS -->
-		<script src="{{ asset('assets/plugins/apexchart/apexcharts.min.js') }}"></script>
-		<script src="{{ asset('assets/plugins/apexchart/chart-data.js') }}"></script>
+		@stack('scripts')
 		
 		<!-- Custom JS -->
 		<script src="{{ asset('assets/js/script.js') }}"></script>
