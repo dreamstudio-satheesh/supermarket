@@ -15,7 +15,7 @@
             <h6>View/Search product Category</h6>
         </div>
         <div class="page-btn">
-            <a href="addcategory.html" class="btn btn-added">
+            <a href="{{ route('categories.create') }}" class="btn btn-added">
                 <img src="assets/img/icons/plus.svg"  class="me-1" alt="img">Add  Category
             </a>
         </div>
@@ -98,14 +98,15 @@
                                     <span class="checkmarks"></span>
                                 </label>
                             </th>
-                            <th>Category name</th>
-                            <th>Category Code</th>
-                            <th>Description</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Subcategories</th>
                             <th>Created By</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($categories as $category)
                         <tr>
                             <td>
                                 <label class="checkboxs">
@@ -113,324 +114,31 @@
                                     <span class="checkmarks"></span>
                                 </label>
                             </td>
-                            <td class="productimgname">
-                                <a href="javascript:void(0);" class="product-img">
-                                    <img src="assets/img/product/noimage.png" alt="product">
-                                </a>
-                                <a href="javascript:void(0);">Computers</a>
-                            </td>
-                            <td>CT001</td>
-                            <td>Computers Description</td>
-                            <td>Admin</td>
+                            <td>{{ $category->id }}</td>
+                            <td>{{ $category->name }}</td>
                             <td>
-                                <a class="me-3" href="editcategory.html">
+                                {{-- <ul>
+                                    @foreach($category->subcategories as $subcategory)
+                                        <li>{{ $subcategory->name }}</li>
+                                    @endforeach
+                                </ul> --}}
+                            </td>
+                            <td>
+                                Arun
+                            </td>
+                            <td>
+                                <a class="me-3" href="{{ route('categories.edit', $category) }}">
                                     <img src="assets/img/icons/edit.svg" alt="img">
                                 </a>
-                                <a class="me-3 confirm-text" href="javascript:void(0);">
-                                    <img src="assets/img/icons/delete.svg" alt="img">
-                                </a>
+                                                          
+                                <form action="{{ route('categories.destroy', $category) }}" method="POST" style="display: inline-block;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="image" alt="Submit" src="assets/img/icons/delete.svg" />
+                                </form>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <label class="checkboxs">
-                                    <input type="checkbox">
-                                    <span class="checkmarks"></span>
-                                </label>
-                            </td>
-                            <td class="productimgname">
-                                <a href="javascript:void(0);" class="product-img">
-                                    <img src="assets/img/product/noimage.png" alt="product">
-                                </a>
-                                <a href="javascript:void(0);">Fruits</a>
-                            </td>
-                            <td>CT002</td>
-                            <td>Fruits Description</td>
-                            <td>Admin</td>
-                            <td>
-                                <a class="me-3" href="editcategory.html">
-                                    <img src="assets/img/icons/edit.svg" alt="img">
-                                </a>
-                                <a class="me-3 confirm-text" href="javascript:void(0);">
-                                    <img src="assets/img/icons/delete.svg" alt="img">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="checkboxs">
-                                    <input type="checkbox">
-                                    <span class="checkmarks"></span>
-                                </label>
-                            </td>
-                            <td class="productimgname">
-                                <a href="javascript:void(0);" class="product-img">
-                                    <img src="assets/img/product/noimage.png" alt="product">
-                                </a>
-                                <a href="javascript:void(0);">Fruits</a>
-                            </td>
-                            <td>CT003</td>
-                            <td>Fruits Description</td>
-                            <td>Admin</td>
-                            <td>
-                                <a class="me-3" href="editcategory.html">
-                                    <img src="assets/img/icons/edit.svg" alt="img">
-                                </a>
-                                <a class="me-3 confirm-text" href="javascript:void(0);">
-                                    <img src="assets/img/icons/delete.svg" alt="img">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="checkboxs">
-                                    <input type="checkbox">
-                                    <span class="checkmarks"></span>
-                                </label>
-                            </td>
-                            <td class="productimgname">
-                                <a href="javascript:void(0);" class="product-img">
-                                    <img src="assets/img/product/noimage.png" alt="product">
-                                </a>
-                                <a href="javascript:void(0);">Fruits</a>
-                            </td>
-                            <td>CT004</td>
-                            <td>Fruits Description</td>
-                            <td>Admin</td>
-                            <td>
-                                <a class="me-3" href="editcategory.html">
-                                    <img src="assets/img/icons/edit.svg" alt="img">
-                                </a>
-                                <a class="me-3 confirm-text" href="javascript:void(0);">
-                                    <img src="assets/img/icons/delete.svg" alt="img">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="checkboxs">
-                                    <input type="checkbox">
-                                    <span class="checkmarks"></span>
-                                </label>
-                            </td>
-                            <td class="productimgname">
-                                <a href="javascript:void(0);" class="product-img">
-                                    <img src="assets/img/product/noimage.png" alt="product">
-                                </a>
-                                <a href="javascript:void(0);">Accessories</a>
-                            </td>
-                            <td>CT005</td>
-                            <td>Accessories Description</td>
-                            <td>Admin</td>
-                            <td>
-                                <a class="me-3" href="editcategory.html">
-                                    <img src="assets/img/icons/edit.svg" alt="img">
-                                </a>
-                                <a class="me-3 confirm-text" href="javascript:void(0);">
-                                    <img src="assets/img/icons/delete.svg" alt="img">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="checkboxs">
-                                    <input type="checkbox">
-                                    <span class="checkmarks"></span>
-                                </label>
-                            </td>
-                            <td class="productimgname">
-                                <a href="javascript:void(0);" class="product-img">
-                                    <img src="assets/img/product/noimage.png" alt="product">
-                                </a>
-                                <a href="javascript:void(0);">Accessories</a>
-                            </td>
-                            <td>CT006</td>
-                            <td>Accessories Description</td>
-                            <td>Admin</td>
-                            <td>
-                                <a class="me-3" href="editcategory.html">
-                                    <img src="assets/img/icons/edit.svg" alt="img">
-                                </a>
-                                <a class="me-3 confirm-text" href="javascript:void(0);">
-                                    <img src="assets/img/icons/delete.svg" alt="img">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="checkboxs">
-                                    <input type="checkbox">
-                                    <span class="checkmarks"></span>
-                                </label>
-                            </td>
-                            <td class="productimgname">
-                                <a href="javascript:void(0);" class="product-img">
-                                    <img src="assets/img/product/noimage.png" alt="product">
-                                </a>
-                                <a href="javascript:void(0);">Accessories</a>
-                            </td>
-                            <td>CT007</td>
-                            <td>Accessories Description</td>
-                            <td>Admin</td>
-                            <td>
-                                <a class="me-3" href="editcategory.html">
-                                    <img src="assets/img/icons/edit.svg" alt="img">
-                                </a>
-                                <a class="me-3 confirm-text" href="javascript:void(0);">
-                                    <img src="assets/img/icons/delete.svg" alt="img">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="checkboxs">
-                                    <input type="checkbox">
-                                    <span class="checkmarks"></span>
-                                </label>
-                            </td>
-                            <td class="productimgname">
-                                <a href="javascript:void(0);" class="product-img">
-                                    <img src="assets/img/product/noimage.png" alt="product">
-                                </a>
-                                <a href="javascript:void(0);">Accessories</a>
-                            </td>
-                            <td>CT008</td>
-                            <td>Accessories Description</td>
-                            <td>Admin</td>
-                            <td>
-                                <a class="me-3" href="editcategory.html">
-                                    <img src="assets/img/icons/edit.svg" alt="img">
-                                </a>
-                                <a class="me-3 confirm-text" href="javascript:void(0);">
-                                    <img src="assets/img/icons/delete.svg" alt="img">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="checkboxs">
-                                    <input type="checkbox">
-                                    <span class="checkmarks"></span>
-                                </label>
-                            </td>
-                            <td class="productimgname">
-                                <a href="javascript:void(0);" class="product-img">
-                                    <img src="assets/img/product/noimage.png" alt="product">
-                                </a>
-                                <a href="javascript:void(0);">Accessories</a>
-                            </td>
-                            <td>CT009</td>
-                            <td>Accessories Description</td>
-                            <td>Admin</td>
-                            <td>
-                                <a class="me-3" href="editcategory.html">
-                                    <img src="assets/img/icons/edit.svg" alt="img">
-                                </a>
-                                <a class="me-3 confirm-text" href="javascript:void(0);">
-                                    <img src="assets/img/icons/delete.svg" alt="img">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="checkboxs">
-                                    <input type="checkbox">
-                                    <span class="checkmarks"></span>
-                                </label>
-                            </td>
-                            <td class="productimgname">
-                                <a href="javascript:void(0);" class="product-img">
-                                    <img src="assets/img/product/noimage.png" alt="product">
-                                </a>
-                                <a href="javascript:void(0);">Accessories</a>
-                            </td>
-                            <td>CT0010</td>
-                            <td>Accessories Description</td>
-                            <td>Admin</td>
-                            <td>
-                                <a class="me-3" href="editcategory.html">
-                                    <img src="assets/img/icons/edit.svg" alt="img">
-                                </a>
-                                <a class="me-3 confirm-text" href="javascript:void(0);">
-                                    <img src="assets/img/icons/delete.svg" alt="img">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="checkboxs">
-                                    <input type="checkbox">
-                                    <span class="checkmarks"></span>
-                                </label>
-                            </td>
-                            <td class="productimgname">
-                                <a href="javascript:void(0);" class="product-img">
-                                    <img src="assets/img/product/noimage.png" alt="product">
-                                </a>
-                                <a href="javascript:void(0);">Accessories</a>
-                            </td>
-                            <td>CT008</td>
-                            <td>Accessories Description</td>
-                            <td>Admin</td>
-                            <td>
-                                <a class="me-3" href="editcategory.html">
-                                    <img src="assets/img/icons/edit.svg" alt="img">
-                                </a>
-                                <a class="me-3 confirm-text" href="javascript:void(0);">
-                                    <img src="assets/img/icons/delete.svg" alt="img">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="checkboxs">
-                                    <input type="checkbox">
-                                    <span class="checkmarks"></span>
-                                </label>
-                            </td>
-                            <td class="productimgname">
-                                <a href="javascript:void(0);" class="product-img">
-                                    <img src="assets/img/product/noimage.png" alt="product">
-                                </a>
-                                <a href="javascript:void(0);">Accessories</a>
-                            </td>
-                            <td>CT009</td>
-                            <td>Accessories Description</td>
-                            <td>Admin</td>
-                            <td>
-                                <a class="me-3" href="editcategory.html">
-                                    <img src="assets/img/icons/edit.svg" alt="img">
-                                </a>
-                                <a class="me-3 confirm-text" href="javascript:void(0);">
-                                    <img src="assets/img/icons/delete.svg" alt="img">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="checkboxs">
-                                    <input type="checkbox">
-                                    <span class="checkmarks"></span>
-                                </label>
-                            </td>
-                            <td class="productimgname">
-                                <a href="javascript:void(0);" class="product-img">
-                                    <img src="assets/img/product/noimage.png" alt="product">
-                                </a>
-                                <a href="javascript:void(0);">Accessories</a>
-                            </td>
-                            <td>CT0010</td>
-                            <td>Accessories Description</td>
-                            <td>Admin</td>
-                            <td>
-                                <a class="me-3" href="editcategory.html">
-                                    <img src="assets/img/icons/edit.svg" alt="img">
-                                </a>
-                                <a class="me-3 confirm-text" href="javascript:void(0);">
-                                    <img src="assets/img/icons/delete.svg" alt="img">
-                                </a>
-                            </td>
-                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>

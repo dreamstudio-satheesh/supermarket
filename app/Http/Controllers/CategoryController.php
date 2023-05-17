@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -55,6 +56,12 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
+       // Check if category has associated products
+        $productsCount = Product::where('category_id', $category->id)->count();
+        if ($productsCount > 0) {
+        return redirect()->route('categories.index')->with('error', 'Cannot delete category. It has associated products.');
+        }
+       
         $category->delete();
         return redirect()->route('categories.index')->with('success', 'Category deleted successfully!');
     }

@@ -454,6 +454,7 @@
 			<!-- /Sidebar -->
 
 			<div class="page-wrapper">
+				@include('flash-message')
 					@yield('content')
 			</div>
 		</div>
