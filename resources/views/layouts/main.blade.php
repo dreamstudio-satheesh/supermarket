@@ -22,8 +22,10 @@
     <!-- animation CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
 
-    <!-- Datatable CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap4.min.css') }}">
+	<!-- Toatr CSS -->		
+	<link rel="stylesheet" href="{{ asset('assets/plugins/toastr/toatr.css') }}">
+
+	@stack('styles')
 
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css') }}">
@@ -454,7 +456,7 @@
 			<!-- /Sidebar -->
 
 			<div class="page-wrapper">
-				@include('flash-message')
+				
 					@yield('content')
 			</div>
 		</div>
@@ -476,7 +478,24 @@
 		<!-- Bootstrap Core JS -->
 		<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 
+		<!-- Mask JS -->
+		<script src="{{ asset('assets/plugins/toastr/toastr.min.js') }}"></script>
+
 		@stack('scripts')
+
+		@if($errors->any())
+		<script>
+			toastr.error("Please check the form below for errors", "Inconceivable!");
+		
+		</script>
+
+		@endif
+
+		@if (session('success'))
+		<script>
+		toastr.success('{{ session('success') }}');	
+		</script>	 
+		@endif
 		
 		<!-- Custom JS -->
 		<script src="{{ asset('assets/js/script.js') }}"></script>

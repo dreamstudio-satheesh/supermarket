@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@push('scripts')
+
+@endpush
+
+
+
 @section('content')
 <div class="content">
     <div class="page-header">
@@ -18,7 +24,12 @@
                 <div class="col-lg-6 col-sm-6 col-12">
                     <div class="form-group">
                         <label>Category Name</label>
-                        <input type="text" name="name" id="name" required>
+                        <input type="text" class="form-control @if($errors->has('name'))is-invalid @endif " name="name" id="name" value="{{ old('name') }}" required>
+                        @if($errors->has('name'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('name') }}
+                        </div>
+                        @endif
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-6 col-12">
@@ -28,25 +39,6 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-12">
-                    <div class="form-group">
-                        <label>Description</label>
-                        <textarea class="form-control"></textarea>
-                    </div>
-                </div>
-                
-                <div class="col-lg-12">
-                    <div class="form-group">
-                        <label>	Product Image</label>
-                        <div class="image-upload">
-                            <input type="file">
-                            <div class="image-uploads">
-                                <img src="assets/img/icons/upload.svg" alt="img">
-                                <h4>Drag and drop a file to upload</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-lg-12">
                     <button class="btn btn-submit me-2" type="submit">Create</button>                   
                     <a href="{{ route('categories.index') }}" class="btn btn-cancel">Cancel</a>

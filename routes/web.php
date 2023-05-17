@@ -21,10 +21,13 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::group(['middleware' => 'web'], function () {
+    //All the routes that belongs to the group goes here
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+    Route::resource('products', ProductController::class); 
 
-Route::resource('products', ProductController::class); 
+    Route::resource('categories', CategoryController::class);
+});
 
-Route::resource('categories', CategoryController::class);
