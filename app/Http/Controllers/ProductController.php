@@ -9,7 +9,7 @@ use App\Models\Unit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class ProductsController extends Controller
+class ProductController extends Controller
 {
     public function index()
     {
@@ -34,7 +34,7 @@ class ProductsController extends Controller
             'unit_id' => 'nullable|exists:units.id',
             'description' => 'nullable',
             'price' => 'required|numeric',
-            'category_id' => 'required|exists:categories.id',
+            'category_id' => 'required|exists:categoriesid',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
