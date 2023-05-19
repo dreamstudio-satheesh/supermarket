@@ -40,9 +40,11 @@
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="form-group">
                         <label>Category</label>
-                        <select class="select">
-                            <option>Choose Category</option>
-                            <option>Computers</option>
+                        <select class="select" name="category_id">
+                            <option value="" disabled selected>Choose Category</option>
+                            @foreach($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -50,16 +52,18 @@
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="form-group">
                         <label>Brand</label>
-                        <select class="select">
-                            <option>Choose Brand</option>
-                            <option>Brand</option>
+                        <select class="select" name="brand_id">
+                            <option value="" disabled selected>Choose Brand</option>
+                            @foreach($brands as $brand)
+                            <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                        @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="form-group">
                         <label>Unit</label>
-                        <select class="select">
+                        <select class="select" name="unit_id">
                             <option>Choose Unit</option>
                             <option>Unit</option>
                         </select>
@@ -67,32 +71,37 @@
                 </div>
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="form-group">
-                        <label>SKU</label>
-                        <input type="text" >
+                        <label>Barcode</label>
+                        <input type="text" class="form-control @if($errors->has('barcode'))is-invalid @endif " name="barcode" id="barcode" value="{{ old('barcode') }}" required>
+                        @if($errors->has('barcode'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('barcode') }}
+                        </div>
+                        @endif
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="form-group">
                         <label>Minimum Qty</label>
-                        <input type="text" >
+                        <input type="text" name="minimum_quantity" value="{{ old('minimum_quantity') }}">
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="form-group">
                         <label>Quantity</label>
-                        <input type="text" >
+                        <input type="text" name="stock_quantity" value="{{ old('stock_quantity') }}">
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Description</label>
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="description"></textarea>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="form-group">
                         <label>Tax</label>
-                        <select class="select">
+                        <select class="select" name="tax_id">
                             <option>Choose Tax</option>
                             <option>2%</option>
                         </select>
@@ -101,8 +110,8 @@
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="form-group">
                         <label>Discount Type</label>
-                        <select class="select">
-                            <option>Percentage</option>
+                        <select class="select" name="discount">
+                            <option value="">Percentage</option>
                             <option>10%</option>
                             <option>20%</option>
                         </select>
@@ -111,15 +120,20 @@
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="form-group">
                         <label>Price</label>
-                        <input type="text" >
+                        <input type="text" class="form-control @if($errors->has('price'))is-invalid @endif " name="price" id="price" value="{{ old('price') }}" required>
+                        @if($errors->has('price'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('price') }}
+                        </div>
+                        @endif
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="form-group">
                         <label>	Status</label>
-                        <select class="select">
-                            <option>Closed</option>
-                            <option>Open</option>
+                        <select class="select" name="status">
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
                         </select>
                     </div>
                 </div>
@@ -127,7 +141,7 @@
                     <div class="form-group">
                         <label>	Product Image</label>
                         <div class="image-upload">
-                            <input type="file">
+                            <input type="file" name="image">
                             <div class="image-uploads">
                                 <img src="{{ asset('assets/img/icons/upload.svg') }}" alt="img">
                                 <h4>Drag and drop a file to upload</h4>

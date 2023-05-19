@@ -251,10 +251,8 @@
 									<li><a href="{{ route('products.create') }}">Add Product</a></li>
 									<li><a href="{{ route('categories.index') }}">Category List</a></li>
 									<li><a href="{{ route('categories.create') }}">Add Category</a></li>
-									<li><a href="{{ route('categories.index') }}">Sub Category List</a></li>
-									<li><a href="{{ route('categories.create') }}">Add Sub Category</a></li>
-									<li><a href="{{ route('categories.index') }}">Brand List</a></li>
-									<li><a href="{{ route('categories.create') }}">Add Brand</a></li>
+									<li><a href="{{ route('brands.index') }}">Brand List</a></li>
+									<li><a href="{{ route('brands.create') }}">Add Brand</a></li>
 									<li><a href="{{ route('categories.index') }}">Import Products</a></li>
 									<li><a href="{{ route('categories.index') }}">Print Barcode</a></li>
 								</ul>
