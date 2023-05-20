@@ -25,6 +25,7 @@ class CategoryController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|unique:categories|max:255',
+            'description' => 'nullable|string|max:500',
         ]);
 
         $category = Category::create($validatedData);
@@ -48,6 +49,7 @@ class CategoryController extends Controller
                 'required',
                 'max:255',
                 Rule::unique('categories')->ignore($category->id),
+                'description' => 'nullable|string|max:500',
             ],
         ]);
 
